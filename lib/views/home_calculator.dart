@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String _info = "Informe seus dados.";
+  String _info = "Informe seus dados";
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   UserInput userInput = UserInput();
@@ -56,8 +56,8 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Container(
-                  width: 90, // Largura desejada do ícone redondo
-                  height: 90, // Altura desejada do ícone redondo
+                  width: 90, 
+                  height: 90,
                   decoration: const BoxDecoration(
                     gradient: RadialGradient(colors: [
                       Color.fromARGB(255, 118, 246, 191),
@@ -65,29 +65,33 @@ class _HomeState extends State<Home> {
                       Color.fromARGB(255, 46, 159, 114),
                     ]),
                     shape: BoxShape.circle,
-                    color: Colors.green, // Cor de fundo do ícone
+                    color: Colors.green, 
                   ),
                   child: const Center(
                     child: Icon(
-                      Icons.person_3_sharp, // Ícone desejado
-                      color: Colors.white, // Cor do ícone
-                      size: 65, // Tamanho do ícone
+                      Icons.person_3_sharp, 
+                      color: Colors.white, 
+                      size: 65, 
                     ),
                   ),
                 ),
               ),
-              CustomTextField(
-                controller: userInput.pesoController,
-                label: "Peso (kg)",
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "Insira seu Peso!";
-                  }
-                  return null;
-                },
-                keyboardType: TextInputType.number,
-              ),
-              CustomTextField(
+            
+                  Column(
+                    children: [
+                      CustomTextField(
+                        controller: userInput.pesoController,
+                        label: "Peso (kg)",
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Insira seu Peso!";
+                          }
+                          return null;
+                        },
+                        keyboardType: TextInputType.number,
+                        
+                      ),
+                       CustomTextField(
                 controller: userInput.alturaController,
                 label: "Altura (CM)",
                 validator: (value) {
@@ -98,6 +102,9 @@ class _HomeState extends State<Home> {
                 },
                 keyboardType: TextInputType.number,
               ),
+                    ],
+                  ),
+             
               CustomCalculateButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {

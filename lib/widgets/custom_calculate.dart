@@ -8,10 +8,11 @@ class CustomCalculateButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 0.0, bottom: 0),
+      padding: const EdgeInsets.only(top: 32.0, bottom: 32.0),
       child: TextButton(
         onPressed: onPressed,
           child: Container(
+            width: 300.0,
             height: 50, // Altura do botão
             decoration: BoxDecoration(
               gradient: const LinearGradient(
@@ -27,7 +28,7 @@ class CustomCalculateButton extends StatelessWidget {
             ),
             child: const Center(
               child: Text(
-                'Botão',
+                'Confirmar',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
