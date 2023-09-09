@@ -9,7 +9,7 @@ class CustomCalculateButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 0.0, bottom: 0),
-      child: ElevatedButton(
+      child: TextButton(
         onPressed: onPressed,
           child: Container(
             height: 50, // Altura do botão
